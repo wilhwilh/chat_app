@@ -9,16 +9,8 @@
 <body>
         <p>Wellcome to the App</p>
         <script src="/socket.io/socket.io.js"></script>
-        <script type="text/javascript">
-            let socket = io();
+        <script type="text/javascript" src="/js/index.js"></script>
 
-            socket.on('connect', ()=>{
-                console.log('Connected to server.');
-            });
-
-            socket.on('disconnect', ()=>{
-                console.log('Disconnected to server.');
-            });
-        </script>
+        
 </body>
 </html>

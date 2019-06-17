@@ -11,10 +11,35 @@ let io = socketIO(server);
 
 app.use(express.static(publicPath));
 
-io.on('connection', (socket)=>{
+io.on('connection', (socket) =>{
     console.log("A new user just conneced");
 
-    socket.on('disconnect', ()=>{
+    socket.emit('newMessage', {
+        from: "Admin",
+        text: "Welcome to the chat room!",
+        createdAt: new Date().getDate()
+    })
+
+    socket.broadcast.emit('newMessage', {
+        from: "Admin",
+        text: "New user joined",
+        createdAt: new Date().getTime()
+    })
+
+
+
+    socket.on('createMessage', (message) =>{
+        console.log("createMEssage", message);
+        // broadcast to everyone include me
+        io.emit('newMessage', {
+            from: message.from,
+            text: message.text,
+            createdAt: new Date().getTime()
+        })
+        
+    });
+
+    socket.on('disconnect', () =>{
         console.log('A user was disconnected from server.');
     });
     
