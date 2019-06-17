@@ -10,6 +10,14 @@
   "engines": {
     "node": "8.10.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilhwilh/chat_app.git"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "socket.io": "2.2.0"
+  },
   "author": "",
   "license": "ISC"
 }
