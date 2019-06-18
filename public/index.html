@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Chat App</title>
-    </head>
-    <body>
-        <p>Wellcome to the App</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Join | Chat</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="centered-form">
+    <div class="centered-form__form" >
+        <form action="/chat.html">
+            <div class="form-field">
+                <h1>Join Chat</h1>
+            </div>
+            <div class="form-field">
+                <label> Display Name</label>
+                <input type="text" name="name" autofocus>
+            </div>
+            <div class="form-field">
+                <label> Room Name</label>
+                <input type="text" name="room" autofocus>
+            </div>
+            <div class="form-field">
+                <button>Join</button>
+            </div>
 
-        <form id = "message-form">
-            <input type="text" name="message" placeholder="message"> 
-            <button type="submit" id ="submit-btn">Submit</button>
         </form>
-
-        <button type="button" id="send-location">Send Location</button>
-
-        <script src="/socket.io/socket.io.js"></script>
-        <script type="text/javascript" src="/js/index.js"></script>
-    </body>
+    </div>
+</body>
 </html>
